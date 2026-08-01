@@ -235,7 +235,7 @@ gib ihnen nicht **mehr** Kontext.
 
 ## Resources
 
-![bg right:30% w:260](assets/qr.png)
+### github.com/wachterjohannes/nca-mate
 
 - **Symfony Mate** — github.com/symfony/ai
 - **Berlin-Talk (Slides + Demo)** — github.com/wachterjohannes/symfony-mate-berlin
@@ -244,4 +244,4 @@ gib ihnen nicht **mehr** Kontext.
 - **The wrong debate (MCP vs. CLI)** — johanneswachter.dev
 - **MatesOfMate** — github.com/MatesOfMate
 
-Dieses Repo: `demo/` = der N+1-Fall zum Mitmachen.
+In diesem Repo: `demo/` = der N+1-Fall zum Mitmachen, `slides.md` = diese Folien.
