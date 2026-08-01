@@ -11,9 +11,9 @@ section{page-break-before:always;break-before:page}
 section, section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;print-color-adjust:exact!important;transition:none!important}
 section > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}
 }
-foreignObject > :where(section){container-type:size}
+section{container-type:size}
 section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
-foreignObject > :where(section):not([\20 root]){--primary-color: #1a2b4e;--background-color: #e8e6de;--teal-bg: #3f6e77;--pattern-color: #E8EDF2;--font-primary: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;--font-mono: 'Fira Code', monospace;--section-width: 1280px;--section-height: 720px;--section-padding: 40px;--section-padding-top: 80px;}
+section{--primary-color: #1a2b4e;--background-color: #e8e6de;--teal-bg: #3f6e77;--pattern-color: #E8EDF2;--font-primary: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;--font-mono: 'Fira Code', monospace;--section-width: 1280px;--section-height: 720px;--section-padding: 40px;--section-padding-top: 80px;}
 section :is(h1, marp-h1){color:var(--primary-color);font-size:70px;font-weight:600;margin-bottom:0.5em;line-height:1.1;letter-spacing:-0.02em;font-family:var(--font-primary)}
 section ul{list-style-type:none;padding:0;margin:0}
 section ul li{color:var(--primary-color);font-size:1.2em;line-height:1.8;margin-bottom:0.8em;padding-left:1.5em;position:relative;font-family:var(--font-primary);font-weight:400}
@@ -110,6 +110,6 @@ section[data-marpit-advanced-background="background"][data-marpit-advanced-backg
 section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}
 section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure > figcaption{position:absolute;border:0;clip:rect(0, 0, 0, 0);height:1px;margin:-1px;overflow:hidden;padding:0;white-space:nowrap;width:1px}
 section[data-marpit-advanced-background="content"], section[data-marpit-advanced-background="pseudo"]{background:transparent!important}
-section[data-marpit-advanced-background="pseudo"], foreignObject[data-marpit-advanced-background="pseudo"]{pointer-events:none!important}
+section[data-marpit-advanced-background="pseudo"]{pointer-events:none!important}
 section[data-marpit-advanced-background-split]{width:100%;height:100%}
 

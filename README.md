@@ -72,22 +72,52 @@ composer install
 
 # Fixtures VOR dem Serverstart laden, sonst ist die Seite leer
 # und es gibt keinen N+1 zu finden.
-php bin/console doctrine:database:create
+#
+# Kein doctrine:database:create — SQLite kann das in aktuellen Doctrine-Versionen
+# nicht mehr und wirft einen roten Fehler. schema:create legt die Datei selbst an.
 php bin/console doctrine:schema:create
 php bin/console doctrine:fixtures:load --no-interaction
 
 symfony server:start --port=8111
 ```
 
+Geprüft am 01.08.2026 mit PHP 8.5: die Seite antwortet mit **101 Queries** in rund
+**750 ms**. Genau der Fall aus dem Talk.
+
 Die App startet **ohne** Mate — das ist Absicht, der Kontrast ist der Inhalt.
 
 ### Durchgang 1 — ohne Mate
 
-Neue Assistenten-Session im `demo/`-Verzeichnis, dann:
+Wichtig: **ohne fremde MCP-Server starten.** Wer global einen Datenbank-, Filesystem-
+oder Sentry-Server konfiguriert hat, misst sonst dessen Wirkung mit — und die halbe
+Vorführung besteht darin, zu zeigen, was ein Agent *ohne* Werkzeuge tut.
+
+```bash
+cd demo
+claude --strict-mcp-config
+```
+
+`--strict-mcp-config` ignoriert alles, was in der Benutzer- oder Projektkonfiguration
+an MCP-Servern steht. Dann die Frage:
 
 > Die Seite ist langsam. Finde das Performance-Problem.
 
 Zuschauen, was er liest. Das ist die Hälfte der Vorführung.
+
+<details>
+<summary>Noch strenger — auch ohne persönliche Skills und Einstellungen</summary>
+
+`--strict-mcp-config` schaltet nur MCP ab. Eigene Skills, `~/.claude/CLAUDE.md` und
+Einstellungen wirken weiter. Für einen wirklich nackten Agenten braucht es ein eigenes
+Konfigurationsverzeichnis — inklusive der Zugangsdaten, sonst steht man vor dem Login:
+
+```bash
+export CLAUDE_CONFIG_DIR=$(mktemp -d)
+cp ~/.claude/.credentials.json "$CLAUDE_CONFIG_DIR/"
+claude --strict-mcp-config
+```
+
+</details>
 
 ### Durchgang 2 — mit Mate
 
@@ -97,8 +127,16 @@ vendor/bin/mate init
 vendor/bin/mate discover
 ```
 
-Dann eine **neue** Session starten — der MCP-Server wird beim Sessionstart
-eingelesen, eine laufende Session sieht ihn nicht. Dieselbe Frage stellen.
+Dann eine **neue** Session starten — der MCP-Server wird beim Sessionstart eingelesen,
+eine laufende Session sieht ihn nicht. Wieder streng, aber diesmal mit genau *einer*
+zugelassenen Konfiguration:
+
+```bash
+claude --strict-mcp-config --mcp-config .mcp.json
+```
+
+So ist Mate der einzige Unterschied zwischen den beiden Durchgängen. Dieselbe Frage
+stellen.
 
 ### Vorher zurücksetzen
 
@@ -111,7 +149,7 @@ cd demo && git checkout . && rm -rf mate/ .mcp.json vendor/symfony/ai-mate*
 ```bash
 # Reihenfolge beachten: --theme-set ist eine Array-Option und würde
 # eine danach stehende Eingabedatei verschlucken.
-npx @marp-team/marp-cli slides.md --theme-set theme/ -o index.html --allow-local-files
+marp slides.md --theme-set theme/ -o index.html --allow-local-files
 ```
 
 ---

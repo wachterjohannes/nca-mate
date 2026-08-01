@@ -97,6 +97,10 @@ Beides sind am Ende **PHP-Klassen**. Kein Framework im Framework.
 
 ## Ohne Mate
 
+```bash
+claude --strict-mcp-config
+```
+
 Dieselbe Frage, ohne Werkzeug:
 
 1. Der Agent crawlt das Verzeichnis
@@ -118,7 +122,11 @@ vendor/bin/mate init
 vendor/bin/mate discover
 ```
 
-Dann eine **neue** Session — und dieselbe Frage.
+```bash
+claude --strict-mcp-config --mcp-config .mcp.json
+```
+
+Neue Session, dieselbe Frage — Mate ist der einzige Unterschied.
 
 Der Agent geht zum Profiler. Holt das Token. Lädt das Profil.
 Sieht: **101 Queries, davon 100 identisch.**
