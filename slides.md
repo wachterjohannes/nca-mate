@@ -235,6 +235,8 @@ gib ihnen nicht **mehr** Kontext.
 
 ## Resources
 
+![bg right:28% w:280](assets/qr.png)
+
 ### github.com/wachterjohannes/nca-mate
 
 - **Symfony Mate** — github.com/symfony/ai
