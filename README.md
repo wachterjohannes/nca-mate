@@ -14,6 +14,7 @@ und die zwei Fragen, die im Berliner Deck noch nicht drin waren.
 
 ```
 slides.md      # Destillat-Deck, 18 Slides (Marp)
+theme/         # Das Theme aus dem Berliner Deck, aus dem HTML zurückgewonnen
 assets/        # Grafiken aus dem Berliner Deck
 demo/          # Die Blog-App mit dem N+1 — 101 Queries, live zum Mitmachen
 RESOURCES.md   # Alle Links aus dem Stream
@@ -108,7 +109,9 @@ cd demo && git checkout . && rm -rf mate/ .mcp.json vendor/symfony/ai-mate*
 ## Slides rendern
 
 ```bash
-npx @marp-team/marp-cli slides.md -o index.html   # oder --pdf
+# Reihenfolge beachten: --theme-set ist eine Array-Option und würde
+# eine danach stehende Eingabedatei verschlucken.
+npx @marp-team/marp-cli slides.md --theme-set theme/ -o index.html --allow-local-files
 ```
 
 ---

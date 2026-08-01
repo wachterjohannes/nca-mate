@@ -2,9 +2,13 @@
 marp: true
 lang: de-AT
 paginate: true
+theme: mate
+class: content
 title: Symfony Mate — Never Code Alone
 description: Destillat des SymfonyLive-Berlin-Talks für den NCA-Livestream
 ---
+
+<!-- _class: teal -->
 
 # SYMFONY MATE
 
@@ -39,6 +43,8 @@ Der Agent liest Controller, Entities, Repositories, Templates, Mappings,
 Services, Config — **er muss das**, denn das Problem kann in jeder Schicht liegen.
 
 ---
+
+<!-- _class: quote -->
 
 ## Warum Raten nicht skaliert
 
@@ -215,6 +221,8 @@ Wenn das stimmt, ist die Transportfrage keine Glaubensfrage mehr,
 sondern eine **Messfrage**.
 
 ---
+
+<!-- _class: teal -->
 
 ## Die Kernaussage
 
