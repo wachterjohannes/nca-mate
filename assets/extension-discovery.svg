@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3f6e77"/>
+    </marker>
+  </defs>
+
+  <!-- Step numbers -->
+  <circle cx="120" cy="38" r="14" fill="#3f6e77"/>
+  <text x="120" y="43" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="600">1</text>
+
+  <circle cx="340" cy="38" r="14" fill="#3f6e77"/>
+  <text x="340" y="43" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="600">2</text>
+
+  <circle cx="560" cy="38" r="14" fill="#3f6e77"/>
+  <text x="560" y="43" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="600">3</text>
+
+  <circle cx="780" cy="38" r="14" fill="#3f6e77"/>
+  <text x="780" y="43" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="600">4</text>
+
+  <!-- Step 1: Extension composer.json -->
+  <rect x="30" y="60" width="180" height="90" rx="12" fill="#1a2b4e" filter="url(#shadow)"/>
+  <text x="120" y="85" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="12" opacity="0.7">Extension</text>
+  <text x="120" y="105" text-anchor="middle" fill="white" font-family="Fira Code, monospace" font-size="15" font-weight="500">composer.json</text>
+  <rect x="52" y="116" width="136" height="26" rx="4" fill="rgba(255,255,255,0.1)"/>
+  <text x="120" y="134" text-anchor="middle" fill="white" font-family="Fira Code, monospace" font-size="11" opacity="0.8">extra.ai-mate</text>
+
+  <!-- Arrow 1-2 -->
+  <line x1="218" y1="105" x2="242" y2="105" stroke="#3f6e77" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: installed.json -->
+  <rect x="250" y="60" width="180" height="90" rx="12" fill="#1a2b4e" filter="url(#shadow)"/>
+  <text x="340" y="92" text-anchor="middle" fill="white" font-family="Fira Code, monospace" font-size="15" font-weight="500">installed.json</text>
+  <text x="340" y="124" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="12" opacity="0.7">scanning packages</text>
+
+  <!-- Arrow 2-3 -->
+  <line x1="438" y1="105" x2="462" y2="105" stroke="#3f6e77" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 3: mate discover -->
+  <rect x="470" y="60" width="180" height="90" rx="12" fill="#3f6e77" filter="url(#shadow)"/>
+  <text x="560" y="92" text-anchor="middle" fill="white" font-family="Fira Code, monospace" font-size="15" font-weight="500">mate discover</text>
+  <text x="560" y="124" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="12" opacity="0.8">CLI command</text>
+
+  <!-- Arrow 3-4 -->
+  <line x1="658" y1="105" x2="682" y2="105" stroke="#3f6e77" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: MCP Tools Ready -->
+  <rect x="690" y="60" width="180" height="90" rx="12" fill="#3f6e77" filter="url(#shadow)"/>
+  <text x="780" y="90" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="600">MCP Tools</text>
+  <text x="780" y="110" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="600">Ready</text>
+  <rect x="704" y="120" width="152" height="22" rx="4" fill="rgba(255,255,255,0.12)"/>
+  <text x="780" y="136" text-anchor="middle" fill="white" font-family="Fira Code, monospace" font-size="11" opacity="0.8">#[McpTool] registered</text>
+
+  <!-- Bottom label -->
+  <text x="450" y="195" text-anchor="middle" fill="#1a2b4e" font-family="IBM Plex Sans, sans-serif" font-size="14" opacity="0.5" font-style="italic">Extension discovery pipeline</text>
+</svg>

@@ -1,0 +1,6 @@
+demo/vendor/
+demo/var/
+demo/mate/
+demo/.mcp.json
+index.html
+*.pdf

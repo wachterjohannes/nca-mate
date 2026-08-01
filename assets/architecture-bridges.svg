@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Core package -->
+  <rect x="140" y="10" width="620" height="70" rx="10" fill="#1a2b4e" filter="url(#shadow)"/>
+  <text x="450" y="38" text-anchor="middle" fill="white" font-family="Fira Code, monospace" font-size="18" font-weight="500">symfony/ai-mate</text>
+  <text x="450" y="60" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="12" opacity="0.7">Framework-agnostic core: PHP info, Extension discovery, DI, MCP protocol</text>
+
+  <!-- Connection lines -->
+  <line x1="300" y1="80" x2="160" y2="110" stroke="#3f6e77" stroke-width="2.5"/>
+  <line x1="450" y1="80" x2="450" y2="110" stroke="#3f6e77" stroke-width="2.5"/>
+  <line x1="600" y1="80" x2="740" y2="110" stroke="#3f6e77" stroke-width="2.5"/>
+
+  <!-- Symfony Bridge -->
+  <rect x="15" y="110" width="280" height="140" rx="10" fill="white" stroke="#3f6e77" stroke-width="2.5" filter="url(#shadow)"/>
+  <rect x="15" y="110" width="280" height="36" rx="10" fill="#3f6e77"/>
+  <rect x="15" y="126" width="280" height="20" fill="#3f6e77"/>
+  <text x="155" y="136" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="15" font-weight="600">Extension / Symfony</text>
+  <text x="155" y="162" text-anchor="middle" fill="#3f6e77" font-family="Fira Code, monospace" font-size="9.5">symfony/ai-symfony-mate-extension</text>
+
+  <text x="35" y="190" fill="#1a2b4e" font-family="IBM Plex Sans, sans-serif" font-size="13" opacity="0.8">Profiler access</text>
+  <text x="35" y="210" fill="#1a2b4e" font-family="IBM Plex Sans, sans-serif" font-size="13" opacity="0.8">Container introspection</text>
+  <text x="35" y="230" fill="#1a2b4e" font-family="IBM Plex Sans, sans-serif" font-size="13" opacity="0.8">Service listing</text>
+
+  <!-- Monolog Bridge -->
+  <rect x="310" y="110" width="280" height="140" rx="10" fill="white" stroke="#3f6e77" stroke-width="2.5" filter="url(#shadow)"/>
+  <rect x="310" y="110" width="280" height="36" rx="10" fill="#3f6e77"/>
+  <rect x="310" y="126" width="280" height="20" fill="#3f6e77"/>
+  <text x="450" y="136" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="15" font-weight="600">Extension / Monolog</text>
+  <text x="450" y="162" text-anchor="middle" fill="#3f6e77" font-family="Fira Code, monospace" font-size="9.5">symfony/ai-monolog-mate-extension</text>
+
+  <text x="330" y="190" fill="#1a2b4e" font-family="IBM Plex Sans, sans-serif" font-size="13" opacity="0.8">Log search</text>
+  <text x="330" y="210" fill="#1a2b4e" font-family="IBM Plex Sans, sans-serif" font-size="13" opacity="0.8">Channel filtering</text>
+  <text x="330" y="230" fill="#1a2b4e" font-family="IBM Plex Sans, sans-serif" font-size="13" opacity="0.8">Level-based queries</text>
+
+  <!-- Sulu Extension -->
+  <rect x="605" y="110" width="280" height="140" rx="10" fill="white" stroke="#3f6e77" stroke-width="2.5" filter="url(#shadow)"/>
+  <rect x="605" y="110" width="280" height="36" rx="10" fill="#3f6e77"/>
+  <rect x="605" y="126" width="280" height="20" fill="#3f6e77"/>
+  <text x="745" y="136" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="15" font-weight="600">Extension / Sulu</text>
+  <text x="745" y="162" text-anchor="middle" fill="#3f6e77" font-family="Fira Code, monospace" font-size="9.5">sulu/sulu-mate-extension</text>
+
+  <text x="625" y="190" fill="#1a2b4e" font-family="IBM Plex Sans, sans-serif" font-size="13" opacity="0.8">Sulu version &amp; config</text>
+  <text x="625" y="210" fill="#1a2b4e" font-family="IBM Plex Sans, sans-serif" font-size="13" opacity="0.8">Webspace introspection</text>
+  <text x="625" y="230" fill="#1a2b4e" font-family="IBM Plex Sans, sans-serif" font-size="13" opacity="0.8">Template structure</text>
+</svg>

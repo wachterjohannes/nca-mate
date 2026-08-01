@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .post { border-bottom: 1px solid #ddd; padding: 1.5rem 0; }
+        .post h2 { margin: 0 0 0.5rem; }
+        .post .meta { color: #666; font-size: 0.9rem; }
+        .comments { margin-top: 1rem; padding-left: 1.5rem; border-left: 3px solid #eee; }
+        .comment { margin-bottom: 0.75rem; }
+        .comment .author { font-weight: 600; }
+        .comment-count { color: #888; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <h1>Blog Posts</h1>
+
+    {% for post in posts %}
+        <div class="post">
+            <h2>{{ post.title }}</h2>
+            <p class="meta">{{ post.createdAt|date('Y-m-d') }}</p>
+            <p>{{ post.body }}</p>
+
+            <div class="comments">
+                <p class="comment-count">{{ post.comments|length }} comments</p>
+                {% for comment in post.comments %}
+                    <div class="comment">
+                        <span class="author">{{ comment.author }}</span>:
+                        {{ comment.content }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</body>
+</html>

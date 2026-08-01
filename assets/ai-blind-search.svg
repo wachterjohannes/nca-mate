@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1a2b4e" opacity="0.4"/>
+    </marker>
+  </defs>
+
+  <!-- AI Assistant box -->
+  <rect x="30" y="70" width="180" height="140" rx="12" fill="#1a2b4e" filter="url(#shadow)"/>
+  <text x="120" y="130" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="20" font-weight="600">AI Assistant</text>
+  <text x="120" y="158" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="13" opacity="0.7">blind search</text>
+
+  <!-- Fanning arrows -->
+  <line x1="210" y1="110" x2="380" y2="32" stroke="#1a2b4e" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.35" marker-end="url(#arrow)"/>
+  <line x1="210" y1="120" x2="380" y2="67" stroke="#1a2b4e" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.35" marker-end="url(#arrow)"/>
+  <line x1="210" y1="132" x2="380" y2="102" stroke="#1a2b4e" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.35" marker-end="url(#arrow)"/>
+  <line x1="210" y1="140" x2="380" y2="137" stroke="#1a2b4e" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.35" marker-end="url(#arrow)"/>
+  <line x1="210" y1="150" x2="380" y2="172" stroke="#1a2b4e" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.35" marker-end="url(#arrow)"/>
+  <line x1="210" y1="158" x2="380" y2="207" stroke="#1a2b4e" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.35" marker-end="url(#arrow)"/>
+  <line x1="210" y1="168" x2="380" y2="242" stroke="#1a2b4e" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.35" marker-end="url(#arrow)"/>
+
+  <!-- File boxes with red X marks -->
+  <!-- controller.php -->
+  <rect x="390" y="16" width="168" height="32" rx="6" fill="#e8e6de" stroke="#1a2b4e" stroke-width="1.2"/>
+  <text x="404" y="37" fill="#1a2b4e" font-family="Fira Code, monospace" font-size="12">controller.php</text>
+  <circle cx="580" cy="32" r="10" fill="#c0392b" opacity="0.15"/>
+  <text x="580" y="37" text-anchor="middle" fill="#c0392b" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="700">&#x2717;</text>
+
+  <!-- entity.php -->
+  <rect x="390" y="51" width="168" height="32" rx="6" fill="#e8e6de" stroke="#1a2b4e" stroke-width="1.2"/>
+  <text x="404" y="72" fill="#1a2b4e" font-family="Fira Code, monospace" font-size="12">entity.php</text>
+  <circle cx="580" cy="67" r="10" fill="#c0392b" opacity="0.15"/>
+  <text x="580" y="72" text-anchor="middle" fill="#c0392b" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="700">&#x2717;</text>
+
+  <!-- repository.php -->
+  <rect x="390" y="86" width="168" height="32" rx="6" fill="#e8e6de" stroke="#1a2b4e" stroke-width="1.2"/>
+  <text x="404" y="107" fill="#1a2b4e" font-family="Fira Code, monospace" font-size="12">repository.php</text>
+  <circle cx="580" cy="102" r="10" fill="gray" opacity="0.2"/>
+  <text x="580" y="108" text-anchor="middle" fill="#888" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="700">?</text>
+
+  <!-- template.twig -->
+  <rect x="390" y="121" width="168" height="32" rx="6" fill="#e8e6de" stroke="#1a2b4e" stroke-width="1.2"/>
+  <text x="404" y="142" fill="#1a2b4e" font-family="Fira Code, monospace" font-size="12">template.twig</text>
+  <circle cx="580" cy="137" r="10" fill="#c0392b" opacity="0.15"/>
+  <text x="580" y="142" text-anchor="middle" fill="#c0392b" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="700">&#x2717;</text>
+
+  <!-- mapping.yaml -->
+  <rect x="390" y="156" width="168" height="32" rx="6" fill="#e8e6de" stroke="#1a2b4e" stroke-width="1.2"/>
+  <text x="404" y="177" fill="#1a2b4e" font-family="Fira Code, monospace" font-size="12">mapping.yaml</text>
+  <circle cx="580" cy="172" r="10" fill="gray" opacity="0.2"/>
+  <text x="580" y="178" text-anchor="middle" fill="#888" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="700">?</text>
+
+  <!-- services.yaml -->
+  <rect x="390" y="191" width="168" height="32" rx="6" fill="#e8e6de" stroke="#1a2b4e" stroke-width="1.2"/>
+  <text x="404" y="212" fill="#1a2b4e" font-family="Fira Code, monospace" font-size="12">services.yaml</text>
+  <circle cx="580" cy="207" r="10" fill="#c0392b" opacity="0.15"/>
+  <text x="580" y="212" text-anchor="middle" fill="#c0392b" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="700">&#x2717;</text>
+
+  <!-- config.yaml -->
+  <rect x="390" y="226" width="168" height="32" rx="6" fill="#e8e6de" stroke="#1a2b4e" stroke-width="1.2"/>
+  <text x="404" y="247" fill="#1a2b4e" font-family="Fira Code, monospace" font-size="12">config.yaml</text>
+  <circle cx="580" cy="242" r="10" fill="gray" opacity="0.2"/>
+  <text x="580" y="248" text-anchor="middle" fill="#888" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="700">?</text>
+
+  <!-- Large question mark -->
+  <text x="700" y="165" text-anchor="middle" fill="#1a2b4e" font-family="IBM Plex Sans, sans-serif" font-size="120" font-weight="700" opacity="0.12">?</text>
+
+  <!-- Caption -->
+  <text x="780" y="260" text-anchor="middle" fill="#1a2b4e" font-family="IBM Plex Sans, sans-serif" font-size="14" opacity="0.5" font-style="italic">no context, no structure</text>
+</svg>
