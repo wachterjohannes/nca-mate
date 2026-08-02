@@ -13,7 +13,7 @@ und die zwei Stellen, die im Berliner Deck noch nicht drin waren.
 ## Was in diesem Repo liegt
 
 ```
-slides.md      # Destillat-Deck, 18 Slides (Marp)
+slides.md      # Destillat-Deck, 18 Slides + 2 Backup-Slides (Marp)
 theme/         # Das Theme aus dem Berliner Deck, aus dem HTML zurückgewonnen
 assets/        # Grafiken aus dem Berliner Deck
 demo/          # Die Blog-App mit dem N+1 — 101 Queries, live zum Mitmachen
@@ -63,8 +63,9 @@ php bin/console doctrine:fixtures:load --no-interaction
 symfony server:start --port=8111
 ```
 
-Zuletzt geprüft am 01.08.2026 mit PHP 8.5: die Seite führt **101 Queries** aus und
-braucht dafür rund **750 ms**.
+Zuletzt geprüft am 02.08.2026 mit PHP 8.5: die Seite führt **101 Queries** aus.
+Der erste Request nach dem Serverstart braucht rund 750 ms (Cache-Warmup), danach
+rund 70 ms — die Zahl, auf die es ankommt, ist die **101**.
 
 Die App startet **ohne** Mate — das ist Absicht, der Kontrast ist der Inhalt.
 
@@ -119,6 +120,11 @@ claude --strict-mcp-config --mcp-config .mcp.json
 
 So ist Mate der einzige Unterschied zwischen den beiden Durchgängen. Dieselbe Frage
 stellen.
+
+### Falls live etwas klemmt
+
+Die letzten beiden Slides im Deck sind Backup: die aufgezeichneten Verläufe beider
+Durchgänge aus dem Probelauf (02.08.2026, Fable 5).
 
 ### Vorher zurücksetzen
 

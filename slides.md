@@ -251,3 +251,44 @@ gib ihnen nicht **mehr** Kontext.
 - **MatesOfMate** — github.com/MatesOfMate
 
 In diesem Repo: `demo/` = der N+1-Fall zum Mitmachen, `slides.md` = diese Folien.
+
+---
+
+## Backup: der Lauf ohne Mate
+
+Aufgezeichnet beim Probelauf, 02.08.2026, Fable 5.
+
+```text
+❯ Die Seite ist langsam. Finde das Performance-Problem.
+
+⏺ „…tippe ich zuerst auf ein N+1-Query-Problem."
+⏺ find src -type f -name "*.php"
+⏺ Read src/Controller/BlogController.php
+⏺ Read templates/blog/index.html.twig
+⏺ Read src/Entity/Post.php
+⏺ grep src/DataFixtures/AppFixtures.php
+```
+
+Ergebnis: *„die Startseite führt 1 + 100 = 101 Queries aus"* —
+**gerechnet** aus vier Dateien. Richtig, aber eine Rechnung.
+
+---
+
+## Backup: der Lauf mit Mate
+
+Dieselbe Frage, ein anderer Weg.
+
+```text
+⏺ symfony-profiler-list          → die letzten Requests
+⏺ symfony-profiler-get f446c9    → das Profil der Startseite
+⏺ read profile/f446c9/db
+     query_count: 101 — davon 100× identisch:
+     SELECT … FROM comment WHERE post_id = ?
+     sample_params: "***REDACTED***"
+⏺ grep src/ → Read src/Controller/BlogController.php
+```
+
+**Gemessen** statt gerechnet: 101 Queries, 1,48 ms in der DB —
+und die Redaction war die ganze Zeit an.
+
+Beide Läufe: ~40 Sekunden, ~75k Tokens. **Der Unterschied ist der Weg.**
