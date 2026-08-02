@@ -115,7 +115,7 @@ eine laufende Session sieht ihn nicht. Wieder streng, aber diesmal mit genau *ei
 zugelassenen Konfiguration:
 
 ```bash
-claude --strict-mcp-config --mcp-config .mcp.json
+claude --strict-mcp-config --mcp-config mcp.json
 ```
 
 So ist Mate der einzige Unterschied zwischen den beiden Durchgängen. Dieselbe Frage
@@ -129,8 +129,11 @@ Durchgänge aus dem Probelauf (02.08.2026, Fable 5).
 ### Vorher zurücksetzen
 
 ```bash
-cd demo && git checkout . && rm -rf mate/ .mcp.json vendor/symfony/ai-mate*
+cd demo && git checkout . && git clean -fd . && composer install
 ```
+
+`git clean` räumt weg, was `mate init` hinterlässt (`mate/`, `mcp.json`, `.agents/`
+u. a.), `composer install` bringt `vendor/` zurück auf den Lock-Stand.
 
 ## Was gegenüber Berlin neu ist
 

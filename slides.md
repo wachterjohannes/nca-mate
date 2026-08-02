@@ -121,7 +121,7 @@ vendor/bin/mate discover
 ```
 
 ```bash
-claude --strict-mcp-config --mcp-config .mcp.json
+claude --strict-mcp-config --mcp-config mcp.json
 ```
 
 Neue Session, dieselbe Frage — Mate ist der einzige Unterschied.
