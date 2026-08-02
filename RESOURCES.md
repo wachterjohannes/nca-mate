@@ -6,14 +6,15 @@
 - **Symfony AI** — <https://github.com/symfony/ai>
 - **MatesOfMate** — <https://github.com/MatesOfMate> · Community-Extensions für
   PHPUnit, PHPStan, Composer, Sulu und Datenbank
-- **Extension-Template** — der Startpunkt für eine eigene Extension, in der
-  MatesOfMate-Organisation
+- **Extension-Template** — der Startpunkt für eine eigene Extension:
+  <https://github.com/MatesOfMate/extension-template>
 
 ## Artikel von Johannes
 
-- **Giving AI Assistants Eyes** — <https://johanneswachter.dev>
-- **Skills over MCP** — <https://johanneswachter.dev>
-- **The wrong debate (MCP vs. CLI)** — <https://johanneswachter.dev>
+- **Giving AI assistants eyes** — <https://johanneswachter.dev/blog/giving-ai-assistants-eyes>
+- **Skills over MCP** — <https://johanneswachter.dev/blog/skills-over-mcp>
+- **The wrong debate (MCP vs. CLI)** — <https://johanneswachter.dev/blog/the-wrong-debate>
+- **The last mile: distributing Agent Skills** — <https://johanneswachter.dev/blog/the-last-mile>
 
 ## Talks
 

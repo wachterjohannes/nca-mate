@@ -44,8 +44,6 @@ Services, Config — **er muss das**, denn das Problem kann in jeder Schicht lie
 
 ---
 
-<!-- _class: quote -->
-
 ## Warum Raten nicht skaliert
 
 Bei 15 Dateien geht das gut. Bei tausenden nicht.
@@ -186,7 +184,7 @@ MCP kostet Tokens. Jede Tool-Beschreibung, jede Antwort. Das ist wahr.
 Aber die Alternative kostet **mehr**: ohne Werkzeug crawlt der Agent
 Dateien, und das meiste davon ist Rauschen.
 
-Gemessen: Mate selbst kostet rund **2.000–2.500 Tokens**.
+Gemessen (Stand April 2026): Mate selbst kostet rund **2.000–2.500 Tokens**.
 
 > Sparsamkeit ist deshalb kein Feintuning, sondern ein **Designprinzip**.
 > Die Qualität des Tools entscheidet, ob du gewinnst oder verschwendest.
@@ -207,8 +205,6 @@ im Auge behalten.
 ---
 
 ## Ausblick
-
-![w:520](assets/knowledge-bridge.svg)
 
 - **Wissen als Extension** — Doku in der *installierten* Version, statt Raten im Netz
 - **Skills als Spezifikation** — nicht nur „wie benutze ich das Tool"
@@ -249,9 +245,9 @@ gib ihnen nicht **mehr** Kontext.
 
 - **Symfony Mate** — github.com/symfony/ai
 - **Berlin-Talk (Slides + Demo)** — github.com/wachterjohannes/symfony-mate-berlin
-- **Giving AI Assistants Eyes** — johanneswachter.dev
-- **Skills over MCP** — johanneswachter.dev
-- **The wrong debate (MCP vs. CLI)** — johanneswachter.dev
+- **Artikel** — johanneswachter.dev/blog:
+  *Giving AI assistants eyes* · *Skills over MCP* ·
+  *The wrong debate (MCP vs. CLI)*
 - **MatesOfMate** — github.com/MatesOfMate
 
 In diesem Repo: `demo/` = der N+1-Fall zum Mitmachen, `slides.md` = diese Folien.
