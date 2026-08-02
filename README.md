@@ -5,7 +5,7 @@ Begleitmaterial zum Livestream mit **Roland Golla** am **04.08.2026, 14:00** —
 
 Destillat des Talks von der **SymfonyLive Berlin (23.04.2026)**, zugeschnitten auf
 die Themen des Streams: die Bausteine, der konkrete Fall, die Wissensschicht darüber —
-und die zwei Fragen, die im Berliner Deck noch nicht drin waren.
+und die zwei Stellen, die im Berliner Deck noch nicht drin waren.
 
 > KI-Assistenten fehlt keine Fähigkeit. Ihnen fehlt Kontext im richtigen Moment.
 > Sie lesen deinen Code, aber sie sehen nie, was deine Anwendung tatsächlich tut.
@@ -35,29 +35,11 @@ RESOURCES.md   # Alle Links aus dem Stream
 | 9 | Redaction: was der Agent nicht sehen darf | Redaction |
 | 10 | Ausblick: Skills als Spezifikation, MCP oder CLI | Ausblick |
 
-## Zwei Stellen, an denen der Stream über Berlin hinausgeht
-
-Das ist der Grund, warum dies eine Destillation und keine Wiederholung ist.
-
-**Skills.** Im Berliner Deck kommen sie nicht vor. Der Gedanke dahinter ist aber die
-direkte Fortsetzung von `INSTRUCTIONS.md`: ein Werkzeug zu *haben* heißt nicht zu
-wissen, *wann* man es einsetzt. Die Beschreibung eines Skills ist immer im Kontext,
-ein paar Zeilen; die Anleitung wird erst geladen, wenn die Beschreibung trifft.
-
-**MCP oder CLI.** In Berlin steht dazu eine Slide mit einer klaren Antwort:
-*„Why MCP, Not Just a CLI?"* — weil die CLI den Agenten raten lässt, er kennt
-Parameter und Ausgabeformat nicht.
-
-Genau diese Lücke schließen Skills. Damit ist die Transportfrage nicht mehr
-selbstverständlich beantwortet, und die Slide von damals ist heute eine offene Frage.
-Das ehrlich zu zeigen — inklusive der eigenen Kehrtwende — ist stärker als es
-wegzulassen.
-
 ## Die Demo
 
 Eine Symfony-Blog-App, 100 Posts mit Kommentaren. `findAll()` im Controller,
 `post.comments` im Template — Doctrine lädt lazy nach. Macht **101 Queries** für eine
-Seite. Der Fall aus dem Talk, unverändert.
+Seite.
 
 Der Punkt ist **nicht**, dass ein guter Assistent den N+1 ohne Mate nicht findet.
 Findet er, das Beispiel ist klein genug. Der Punkt ist, **wie** er dorthin kommt:
@@ -73,16 +55,16 @@ composer install
 # Fixtures VOR dem Serverstart laden, sonst ist die Seite leer
 # und es gibt keinen N+1 zu finden.
 #
-# Kein doctrine:database:create — SQLite kann das in aktuellen Doctrine-Versionen
-# nicht mehr und wirft einen roten Fehler. schema:create legt die Datei selbst an.
+# Kein doctrine:database:create — das kann SQLite in aktuellen Doctrine-Versionen
+# nicht mehr, der Befehl schlägt fehl. schema:create legt die Datei selbst an.
 php bin/console doctrine:schema:create
 php bin/console doctrine:fixtures:load --no-interaction
 
 symfony server:start --port=8111
 ```
 
-Geprüft am 01.08.2026 mit PHP 8.5: die Seite antwortet mit **101 Queries** in rund
-**750 ms**. Genau der Fall aus dem Talk.
+Zuletzt geprüft am 01.08.2026 mit PHP 8.5: die Seite führt **101 Queries** aus und
+braucht dafür rund **750 ms**.
 
 Die App startet **ohne** Mate — das ist Absicht, der Kontrast ist der Inhalt.
 
@@ -143,6 +125,20 @@ stellen.
 ```bash
 cd demo && git checkout . && rm -rf mate/ .mcp.json vendor/symfony/ai-mate*
 ```
+
+## Was gegenüber Berlin neu ist
+
+Wer den Berliner Talk kennt, findet hier zwei Stellen, die dort noch nicht drin waren.
+
+**Skills.** Im Berliner Deck kommen sie nicht vor. Ein Werkzeug zu *haben* heißt
+nicht zu wissen, *wann* man es einsetzt — die Beschreibung eines Skills ist immer
+im Kontext, ein paar Zeilen; die Anleitung wird erst geladen, wenn die Beschreibung
+trifft.
+
+**MCP oder CLI.** In Berlin stand dazu eine Slide mit einer klaren Antwort:
+*„Why MCP, Not Just a CLI?"* — weil die CLI den Agenten raten lässt, er kennt
+Parameter und Ausgabeformat nicht. Genau diese Lücke schließen Skills.
+Damit ist die Frage von damals heute wieder offen.
 
 ## Slides rendern
 

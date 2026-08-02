@@ -53,7 +53,7 @@ eine fehlende Parameter-Definition legt Mate nicht lahm.</p>
 <h2 id="die-bausteine-tools-und-resources">Die Bausteine: Tools und Resources</h2>
 <p><img src="assets/mcp-overview.svg" alt="" style="width:620px;" /></p>
 <ul>
-<li><strong>Tools</strong> — Fragen, die der Agent stellt: „welche Queries lief dieser Request?&quot;</li>
+<li><strong>Tools</strong> — Fragen, die der Agent stellt: „welche Queries hat dieser Request ausgeführt?&quot;</li>
 <li><strong>Resources</strong> — Daten, die er liest: ein Profil, ein Container-Auszug, ein Log</li>
 </ul>
 <p>Beides sind am Ende <strong>PHP-Klassen</strong>. Kein Framework im Framework.</p>
@@ -101,7 +101,7 @@ schauen, dann an die richtige Stelle greifen.</p>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-class="content" data-lang="de-AT" data-theme="mate" lang="de-AT" class="content" data-marpit-pagination="11" style="--paginate:true;--class:content;--lang:de-AT;--theme:mate;" data-marpit-pagination-total="18">
 <h2 id="eigene-extensions">Eigene Extensions</h2>
 <p><img src="assets/extension-discovery.svg" alt="" style="width:600px;" /></p>
-<p>Deine Domäne kennt nur <strong>dein</strong> Projekt. Also bring sie als Tool ein:<br />
+<p>Nur <strong>dein</strong> Projekt kennt deine Domäne. Also bring sie als Tool ein:<br />
 DI-Support, <code>#[McpTool]</code>, fertig.</p>
 <p>Wiederverwendbar? → <strong>MatesOfMate</strong>: PHPUnit, PHPStan, Composer, Sulu, Database.</p>
 <blockquote>
@@ -138,9 +138,9 @@ Die Qualität des Tools entscheidet, ob du gewinnst oder verschwendest.</p>
 <h2 id="redaction-was-der-agent-nicht-sehen-darf">Redaction: was der Agent nicht sehen darf</h2>
 <p>Im Container liegen API-Keys. In Query-Parametern liegen Tokens.<br />
 In Log-Kontext liegen Session-Daten.</p>
-<p>Mate redigiert <strong>standardmäßig</strong>, nicht auf Zuruf.</p>
-<p>Und: neu installierte Extensions sind zwar automatisch entdeckt,<br />
-aber jederzeit abschaltbar. Du musst nicht dein halbes <code>vendor/</code><br />
+<p>Mate schwärzt <strong>standardmäßig</strong>, nicht auf Zuruf.</p>
+<p>Und: neu installierte Extensions werden zwar automatisch entdeckt,<br />
+sind aber jederzeit abschaltbar. Du musst nicht dein halbes <code>vendor/</code><br />
 im Auge behalten.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-class="content" data-lang="de-AT" data-theme="mate" lang="de-AT" class="content" data-marpit-pagination="15" style="--paginate:true;--class:content;--lang:de-AT;--theme:mate;" data-marpit-pagination-total="18">

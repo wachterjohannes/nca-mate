@@ -76,7 +76,7 @@ eine fehlende Parameter-Definition legt Mate nicht lahm.
 
 ![w:620](assets/mcp-overview.svg)
 
-- **Tools** — Fragen, die der Agent stellt: „welche Queries lief dieser Request?"
+- **Tools** — Fragen, die der Agent stellt: „welche Queries hat dieser Request ausgeführt?"
 - **Resources** — Daten, die er liest: ein Profil, ein Container-Auszug, ein Log
 
 Beides sind am Ende **PHP-Klassen**. Kein Framework im Framework.
@@ -149,7 +149,7 @@ Nicht die ganze Anwendung von vorne verstehen. Jedes Mal aufs Neue.
 
 ![w:600](assets/extension-discovery.svg)
 
-Deine Domäne kennt nur **dein** Projekt. Also bring sie als Tool ein:
+Nur **dein** Projekt kennt deine Domäne. Also bring sie als Tool ein:
 DI-Support, `#[McpTool]`, fertig.
 
 Wiederverwendbar? → **MatesOfMate**: PHPUnit, PHPStan, Composer, Sulu, Database.
@@ -196,10 +196,10 @@ Gemessen (Stand April 2026): Mate selbst kostet rund **2.000–2.500 Tokens**.
 Im Container liegen API-Keys. In Query-Parametern liegen Tokens.
 In Log-Kontext liegen Session-Daten.
 
-Mate redigiert **standardmäßig**, nicht auf Zuruf.
+Mate schwärzt **standardmäßig**, nicht auf Zuruf.
 
-Und: neu installierte Extensions sind zwar automatisch entdeckt,
-aber jederzeit abschaltbar. Du musst nicht dein halbes `vendor/`
+Und: neu installierte Extensions werden zwar automatisch entdeckt,
+sind aber jederzeit abschaltbar. Du musst nicht dein halbes `vendor/`
 im Auge behalten.
 
 ---
