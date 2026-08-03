@@ -1,85 +1,86 @@
 ---
 marp: true
-lang: de-AT
+lang: en
 paginate: true
 theme: mate
 class: content
 title: Symfony Mate — Never Code Alone
-description: Destillat des SymfonyLive-Berlin-Talks für den NCA-Livestream
+description: Distilled from the SymfonyLive Berlin talk for the NCA livestream
 ---
 
 <!-- _class: teal -->
 
 # SYMFONY MATE
 
-<div class="subtitle">Deinem KI-Assistenten Augen geben</div>
+<div class="subtitle">Giving your AI assistant eyes</div>
 
-<div class="speaker-info">Johannes Wachter mit Roland Golla — Never Code Alone | 04.08.2026</div>
-
----
-
-## Der blinde Fleck
-
-KI-Assistenten fehlt **keine Fähigkeit**. Ihnen fehlt **Kontext im richtigen Moment**.
-
-Sie lesen deinen Code. Sie sehen nie, was deine Anwendung *tut*:
-
-- keinen Profiler
-- keine Logs
-- keinen Container
-- keine Service-Definitionen
-
-Sie sehen den Bauplan. Nie das Gebäude im Betrieb.
+<div class="speaker-info">Johannes Wachter with Roland Golla — Never Code Alone | 2026-08-04</div>
 
 ---
 
-## Was passiert, wenn die KI raten muss
+## The blind spot
+
+AI assistants are not missing a **capability**. They are missing **context at the right
+moment**.
+
+They read your code. They never see what your application *does*:
+
+- no profiler
+- no logs
+- no container
+- no service definitions
+
+They see the blueprint. Never the building in operation.
+
+---
+
+## What happens when the AI has to guess
 
 ![w:600](assets/ai-blind-search.svg)
 
-Prompt: *„This page is slow, find the performance problem."*
+Prompt: *“This page is slow, find the performance problem.”*
 
-Der Agent liest Controller, Entities, Repositories, Templates, Mappings,
-Services, Config — **er muss das**, denn das Problem kann in jeder Schicht liegen.
-
----
-
-## Warum Raten nicht skaliert
-
-Bei 15 Dateien geht das gut. Bei tausenden nicht.
-
-- **Nicht deterministisch** — derselbe Prompt, ein anderes Ergebnis
-- **Nicht skalierbar** — jede Datei kostet Tokens, auch die, die nur Rauschen sind
-- **Nicht wiederholbar** — Neustart, neue Antwort
-
-> „Wenn du zwei Ärzte nach deiner Gesundheit fragst, bekommst du drei Antworten.
-> Genau das Problem haben wir heute mit Agenten."
+The agent reads controllers, entities, repositories, templates, mappings,
+services, config — **it has to**, because the problem can sit in any layer.
 
 ---
 
-## Was Mate ist
+## Why guessing does not scale
 
-Ein **Development-Only**-Werkzeug, das die Innenansicht einer laufenden
-Symfony-App an den Assistenten gibt.
+At 15 files this works fine. At thousands it does not.
 
-- Läuft **lokal**, auf deiner Maschine
-- Hat in **Produktion nichts zu suchen** — das ist keine Warnung, das ist die Bauart
-- Framework-agnostisch, Symfony ist First-Class-Citizen
-- Eigener DI-Container, **getrennt** von deiner Anwendung
+- **Not deterministic** — same prompt, different result
+- **Not scalable** — every file costs tokens, including the ones that are only noise
+- **Not repeatable** — restart, new answer
 
-Deshalb hilft Mate auch dann noch, wenn dein Container *kaputt* ist —
-eine fehlende Parameter-Definition legt Mate nicht lahm.
+> “Ask two doctors about your health and you get three answers.
+> That is exactly the problem we have with agents today.”
 
 ---
 
-## Die Bausteine: Tools und Resources
+## What Mate is
+
+A **development-only** tool that hands the inside view of a running Symfony
+application to the assistant.
+
+- Runs **locally**, on your machine
+- **Has no business in production** — that is not a warning, that is the design
+- Framework-agnostic, with Symfony as a first-class citizen
+- Its own DI container, **separate** from your application
+
+That is why Mate still helps when your container is *broken* —
+a missing parameter definition does not take Mate down with it.
+
+---
+
+## The building blocks: tools and resources
 
 ![w:620](assets/mcp-overview.svg)
 
-- **Tools** — Fragen, die der Agent stellt: „welche Queries hat dieser Request ausgeführt?"
-- **Resources** — Daten, die er liest: ein Profil, ein Container-Auszug, ein Log
+- **Tools** — questions the agent asks: “which queries did this request run?”
+- **Resources** — data it reads: a profile, a container excerpt, a log
 
-Beides sind am Ende **PHP-Klassen**. Kein Framework im Framework.
+Both are **PHP classes** in the end. No framework inside the framework.
 
 ---
 
@@ -87,32 +88,32 @@ Beides sind am Ende **PHP-Klassen**. Kein Framework im Framework.
 
 # LIVE
 
-## Der N+1 mit 101 Queries
+## The N+1 with 101 queries
 
-`demo/` in diesem Repository
+`demo/` in this repository
 
 ---
 
-## Ohne Mate
+## Without Mate
 
 ```bash
 claude --strict-mcp-config
 ```
 
-Dieselbe Frage, ohne Werkzeug:
+The same question, without a tool:
 
-1. Der Agent crawlt das Verzeichnis
-2. sucht Struktur, Framework, Controller, Entities
-3. liest `index.html.twig`, `BlogController`, `PostRepository` …
-4. rekonstruiert deine Anwendung **aus dem Nichts**
+1. The agent crawls the directory
+2. looks for structure, framework, controllers, entities
+3. reads `index.html.twig`, `BlogController`, `PostRepository` …
+4. reconstructs your application **from nothing**
 
-Er findet es. Das Beispiel ist klein genug.
+It finds it. The example is small enough.
 
-**Die Frage ist nicht *ob*, sondern *wie*.**
+**The question is not *whether*, but *how*.**
 
 ---
 
-## Mit Mate — drei Kommandos
+## With Mate — three commands
 
 ```bash
 composer require --dev symfony/ai-mate symfony/ai-symfony-mate-extension
@@ -124,116 +125,116 @@ vendor/bin/mate discover
 claude --strict-mcp-config --mcp-config mcp.json
 ```
 
-Neue Session, dieselbe Frage — Mate ist der einzige Unterschied.
+New session, same question — Mate is the only difference.
 
-Der Agent geht zum Profiler. Holt das Token. Lädt das Profil.
-Sieht: **101 Queries, davon 100 identisch.**
+The agent goes to the profiler. Gets the token. Loads the profile.
+Sees: **101 queries, 100 of them identical.**
 
-Danach liest er *genau die* Dateien, auf die es ankommt.
-
----
-
-## Warum das funktioniert hat
-
-Der Profiler sagt dem Agenten sofort: *hier sind 100 gleiche Queries.*
-
-Und das Schönste daran: **es sieht menschlich aus.**
-Es ist derselbe Weg, den ein Symfony-Entwickler geht — erst ins Werkzeug
-schauen, dann an die richtige Stelle greifen.
-
-Nicht die ganze Anwendung von vorne verstehen. Jedes Mal aufs Neue.
+After that it reads *exactly the* files that matter.
 
 ---
 
-## Eigene Extensions
+## Why that worked
+
+The profiler tells the agent immediately: *here are 100 identical queries.*
+
+And the best part: **it looks human.**
+It is the same path a Symfony developer takes — look at the tool first,
+then reach for the right spot.
+
+Not understanding the whole application from scratch. Every single time.
+
+---
+
+## Your own extensions
 
 ![w:600](assets/extension-discovery.svg)
 
-Nur **dein** Projekt kennt deine Domäne. Also bring sie als Tool ein:
-DI-Support, `#[McpTool]`, fertig.
+Only **your** project knows your domain. So bring it in as a tool:
+DI support, `#[McpTool]`, done.
 
-Wiederverwendbar? → **MatesOfMate**: PHPUnit, PHPStan, Composer, Sulu, Database.
+Reusable? → **MatesOfMate**: PHPUnit, PHPStan, Composer, Sulu, Database.
 
-> Extension-Autoren bauen keine Kommandos. Sie **kuratieren Kontext.**
+> Extension authors do not build commands. They **curate context.**
 
 ---
 
-## Skills: die Wissensschicht
+## Skills: the knowledge layer
 
-Ein Werkzeug zu *haben* heißt nicht zu wissen, *wann* man es einsetzt.
+*Having* a tool does not mean knowing *when* to use it.
 
 ```markdown
 ---
 name: symfony-profiler-debugging
-description: Wann und wie der Profiler zu benutzen ist
+description: When and how to use the profiler
 ---
-<!-- der Rumpf wird erst geladen, wenn die Beschreibung trifft -->
+<!-- the body is only loaded once the description matches -->
 ```
 
-- Die **Beschreibung** ist immer im Kontext — ein paar Zeilen
-- Die **Anleitung** erst bei Treffer — progressive disclosure
+- The **description** is always in context — a few lines
+- The **instructions** only on a match — progressive disclosure
 
-Das Werkzeug ist das *Können*. Der Skill ist das *Wissen, wann*.
-
----
-
-## Kontext ist ein Budget
-
-MCP kostet Tokens. Jede Tool-Beschreibung, jede Antwort. Das ist wahr.
-
-Aber die Alternative kostet **mehr**: ohne Werkzeug crawlt der Agent
-Dateien, und das meiste davon ist Rauschen.
-
-Gemessen (Stand April 2026): Mate selbst kostet rund **2.000–2.500 Tokens**.
-
-> Sparsamkeit ist deshalb kein Feintuning, sondern ein **Designprinzip**.
-> Die Qualität des Tools entscheidet, ob du gewinnst oder verschwendest.
+The tool is the *ability*. The skill is the *knowing when*.
 
 ---
 
-## Redaction: was der Agent nicht sehen darf
+## Context is a budget
 
-Im Container liegen API-Keys. In Query-Parametern liegen Tokens.
-In Log-Kontext liegen Session-Daten.
+MCP costs tokens. Every tool description, every response. That is true.
 
-Mate schwärzt **standardmäßig**, nicht auf Zuruf.
+But the alternative costs **more**: without a tool the agent crawls
+files, and most of that is noise.
 
-Und: neu installierte Extensions werden zwar automatisch entdeckt,
-sind aber jederzeit abschaltbar. Du musst nicht dein halbes `vendor/`
-im Auge behalten.
+Measured (as of April 2026): Mate itself costs around **2,000–2,500 tokens**.
 
----
-
-## Ausblick
-
-- **Wissen als Extension** — Doku in der *installierten* Version, statt Raten im Netz
-- **Skills als Spezifikation** — nicht nur „wie benutze ich das Tool"
-- **Verteilung ohne Dependency-Konflikte** — PHAR? Etwas anderes?
-- **Muss so ein Werkzeug überhaupt ein MCP-Server sein?**
+> Frugality is therefore not fine-tuning, it is a **design principle**.
+> The quality of the tool decides whether you gain or waste.
 
 ---
 
-## Die letzte Frage — offen
+## Redaction: what the agent must not see
 
-In Berlin stand hier noch: *„Warum MCP und nicht einfach eine CLI?"*
-Antwort damals: weil die CLI den Agenten **raten** lässt — er kennt
-Parameter und Ausgabeformat nicht.
+The container holds API keys. Query parameters hold tokens.
+Log context holds session data.
 
-Genau diese Lücke schließen **Skills**.
+Mate redacts **by default**, not on request.
 
-Wenn das stimmt, ist die Transportfrage keine Glaubensfrage mehr,
-sondern eine **Messfrage**.
+And: newly installed extensions are discovered automatically,
+but can be switched off at any time. You do not have to keep an eye
+on half your `vendor/`.
+
+---
+
+## What is next
+
+- **Knowledge as an extension** — docs for the *installed* version instead of guessing online
+- **Skills as a specification** — not just “how do I use this tool”
+- **Distribution without dependency conflicts** — PHAR? Something else?
+- **Does a tool like this have to be an MCP server at all?**
+
+---
+
+## The last question — open
+
+In Berlin this slide still said: *“Why MCP, not just a CLI?”*
+The answer back then: because a CLI makes the agent **guess** — it does not
+know the parameters or the output format.
+
+That is exactly the gap **skills** close.
+
+If that holds, the transport question is no longer a matter of belief,
+but a **matter of measurement**.
 
 ---
 
 <!-- _class: teal -->
 
-## Die Kernaussage
+## The core message
 
-Wenn KI-Assistenten bei echten Software-Problemen helfen sollen,
-gib ihnen nicht **mehr** Kontext.
+If AI assistants are going to help with real software problems,
+do not give them **more** context.
 
-# Gib ihnen **besseren** Kontext.
+# Give them **better** context.
 
 ---
 
@@ -244,24 +245,25 @@ gib ihnen nicht **mehr** Kontext.
 ### github.com/wachterjohannes/nca-mate
 
 - **Symfony Mate** — github.com/symfony/ai
-- **Berlin-Talk (Slides + Demo)** — github.com/wachterjohannes/symfony-mate-berlin
-- **Artikel** — johanneswachter.dev/blog:
+- **Berlin talk (slides + demo)** — github.com/wachterjohannes/symfony-mate-berlin
+- **Articles** — johanneswachter.dev/blog:
   *Giving AI assistants eyes* · *Skills over MCP* ·
   *The wrong debate (MCP vs. CLI)*
 - **MatesOfMate** — github.com/MatesOfMate
 
-In diesem Repo: `demo/` = der N+1-Fall zum Mitmachen, `slides.md` = diese Folien.
+In this repo: `demo/` = the N+1 case to follow along, `slides.md` = these slides.
 
 ---
 
-## Backup: der Lauf ohne Mate
+## Backup: the run without Mate
 
-Aufgezeichnet beim Probelauf, 02.08.2026, Fable 5.
+Recorded during the rehearsal, 2026-08-02, Fable 5. Translated from the German
+prompt that was used in the recorded run.
 
 ```text
-❯ Die Seite ist langsam. Finde das Performance-Problem.
+❯ The page is slow. Find the performance problem.
 
-⏺ „…tippe ich zuerst auf ein N+1-Query-Problem."
+⏺ “…my first guess is an N+1 query problem.”
 ⏺ find src -type f -name "*.php"
 ⏺ Read src/Controller/BlogController.php
 ⏺ Read templates/blog/index.html.twig
@@ -269,26 +271,26 @@ Aufgezeichnet beim Probelauf, 02.08.2026, Fable 5.
 ⏺ grep src/DataFixtures/AppFixtures.php
 ```
 
-Ergebnis: *„die Startseite führt 1 + 100 = 101 Queries aus"* —
-**gerechnet** aus vier Dateien. Richtig, aber eine Rechnung.
+Result: *“the front page runs 1 + 100 = 101 queries”* —
+**calculated** from four files. Correct, but a calculation.
 
 ---
 
-## Backup: der Lauf mit Mate
+## Backup: the run with Mate
 
-Dieselbe Frage, ein anderer Weg.
+Same question, a different path.
 
 ```text
-⏺ symfony-profiler-list          → die letzten Requests
-⏺ symfony-profiler-get f446c9    → das Profil der Startseite
+⏺ symfony-profiler-list          → the last requests
+⏺ symfony-profiler-get f446c9    → the profile of the front page
 ⏺ read profile/f446c9/db
-     query_count: 101 — davon 100× identisch:
+     query_count: 101 — 100 of them identical:
      SELECT … FROM comment WHERE post_id = ?
      sample_params: "***REDACTED***"
 ⏺ grep src/ → Read src/Controller/BlogController.php
 ```
 
-**Gemessen** statt gerechnet: 101 Queries, 1,48 ms in der DB —
-und die Redaction war die ganze Zeit an.
+**Measured** instead of calculated: 101 queries, 1.48 ms in the database —
+and redaction was on the whole time.
 
-Beide Läufe: ~40 Sekunden, ~75k Tokens. **Der Unterschied ist der Weg.**
+Both runs: ~40 seconds, ~75k tokens. **The difference is the path.**
