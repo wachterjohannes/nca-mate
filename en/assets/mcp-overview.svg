@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+    <marker id="arrowRight" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1a2b4e"/>
+    </marker>
+    <marker id="arrowLeft" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#1a2b4e"/>
+    </marker>
+  </defs>
+
+  <!-- AI Assistant box -->
+  <rect x="40" y="10" width="300" height="120" rx="12" fill="#1a2b4e" filter="url(#shadow)"/>
+  <text x="190" y="55" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="24" font-weight="600">AI Assistant</text>
+  <text x="190" y="82" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="14" opacity="0.7">Claude Code, Copilot, Cursor, JetBrains AI</text>
+
+  <!-- Single bidirectional line with arrows on both ends -->
+  <line x1="355" y1="70" x2="400" y2="70" stroke="#1a2b4e" stroke-width="2.5" marker-start="url(#arrowLeft)"/>
+  <line x1="500" y1="70" x2="545" y2="70" stroke="#1a2b4e" stroke-width="2.5" marker-end="url(#arrowRight)"/>
+
+  <!-- MCP label (centered between boxes) -->
+  <rect x="400" y="50" width="100" height="40" rx="8" fill="#e8e6de" stroke="#1a2b4e" stroke-width="2"/>
+  <text x="450" y="76" text-anchor="middle" fill="#1a2b4e" font-family="Fira Code, monospace" font-size="16" font-weight="600">MCP</text>
+
+  <!-- Protocol label below -->
+  <text x="450" y="115" text-anchor="middle" fill="#1a2b4e" font-family="IBM Plex Sans, sans-serif" font-size="13" opacity="0.5">(stdio)</text>
+
+  <!-- MCP Server box -->
+  <rect x="560" y="10" width="300" height="120" rx="12" fill="#3f6e77" filter="url(#shadow)"/>
+  <text x="710" y="55" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="24" font-weight="600">MCP Server</text>
+  <text x="710" y="82" text-anchor="middle" fill="white" font-family="IBM Plex Sans, sans-serif" font-size="14" opacity="0.7">(your tools)</text>
+</svg>
